@@ -36,7 +36,13 @@ Some of the features that Next.js provides-
 
 Next js has an opiniated way of routing all the screens/pages, its called **File Based Routing**.
 
-### Routing with Pages.
+### Routing with Pages
 
 - All the files( react component ) created in the pages folder corresponds to paths with similar names on the app.
 - You can also just create a subfoler inside the pages folder and create an index.js file inside that folder, the react, a new route will me created with the same name as that of the subfolder and it will reside the react component(or page) you just created in that index.js file.
+- _index.js_ always corresponds to root path of the directory/folder inside which it is present. For example index.js inside pages folder will correspont to domain root of the app( here <https://localhost:3000> ) and index.js inside subfolder projects will correspond to route <http://localhost:3000/projects>.
+
+### Nested Routes
+
+- To nest routes you can simply create different files inside the subfolders.
+- For example if you want to create a route like this _/blog/first_ or _/blog/second_, the just create a subfolder named _blog_ and created _first.js_ and _second.js_ inside that folder, it will automatically correspond to the routes mentioned above.

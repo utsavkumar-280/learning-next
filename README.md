@@ -46,3 +46,9 @@ Next js has an opiniated way of routing all the screens/pages, its called **File
 
 - To nest routes you can simply create different files inside the subfolders.
 - For example if you want to create a route like this _/blog/first_ or _/blog/second_, the just create a subfolder named _blog_ and created _first.js_ and _second.js_ inside that folder, it will automatically correspond to the routes mentioned above.
+
+### Dynamic Routes
+
+- To make a route dynamic you can wrap the name of that file with square brackets.
+- For example to make routes like _/project/1_ , _project/2_, _project/anything_ we can create a file [projectId].js inside the project subdirectory and all of these routes mentioned above will correspond to it.
+- To access the parameter mentioned in the dynamic route you can make use of **_useRouter from "next/router"_**, and extract query property from it, which in itself is an object and contains all the dynamic parameter( here _productId_ )

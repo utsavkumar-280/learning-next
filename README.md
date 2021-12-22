@@ -70,3 +70,8 @@ Next js has an opiniated way of routing all the screens/pages, its called **File
 ### 404 Not Found
 
 Next already provides a Not found page for any unmatched routes, but if you want to create a custom 404 not found page, you can do so by creating a file names **_404.js_** in the root directory( i.e pages ).
+
+### Navigating
+
+- We can use the **Link** component to navigate to any page.([more detailed explation](https://nextjs.org/docs/api-reference/next/router))
+- Also we can use the router object which comes with methods like push, replace, back to navigate imperatively in the app.([more detailed explation](https://nextjs.org/docs/api-reference/next/link))

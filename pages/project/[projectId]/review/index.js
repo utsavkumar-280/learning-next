@@ -4,8 +4,9 @@ import styles from "../../../../styles/Home.module.css";
 import { useRouter } from "next/router";
 
 export default function Project() {
-	const { query } = useRouter();
-	const { projectId } = query;
+	const router = useRouter();
+	const { projectId } = router.query;
+	const currentPath = router.asPath;
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -16,6 +17,12 @@ export default function Project() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome to Project {projectId} Reviews</h1>
+				<button onClick={() => router.push(`${currentPath}/22`)}>
+					Go to Review no. 22
+				</button>
+				<button onClick={() => router.push(`${currentPath}/22`)}>
+					Go to Review no. 22
+				</button>
 			</main>
 
 			<footer className={styles.footer}>

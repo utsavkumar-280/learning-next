@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../../../styles/Home.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Project() {
 	const { query, pathname, asPath } = useRouter();
@@ -17,6 +18,9 @@ export default function Project() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome to Project {projectId}</h1>
+				<Link href={`${asPath}/review`}>
+					<a>Go the reviews</a>
+				</Link>
 			</main>
 
 			<footer className={styles.footer}>

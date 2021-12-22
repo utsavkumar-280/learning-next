@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../../styles/Home.module.css";
+import Link from "next/link";
 
 export default function Project() {
 	return (
@@ -13,6 +14,15 @@ export default function Project() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome to Project page</h1>
+				<Link href="/project/1">
+					<a>Project 1</a>
+				</Link>
+				<Link href="/project/2">
+					<a>Project 2</a>
+				</Link>
+				<Link href="/project/infinity">
+					<a>Project infinity</a>
+				</Link>
 			</main>
 
 			<footer className={styles.footer}>

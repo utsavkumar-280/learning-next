@@ -10,7 +10,7 @@ But why a framework for react, isn't React enough to start building applications
 
 - Now if you think of building applications with just **React**. Its is not really possible to build to full feature rich application ready to be deployed for production just with it.
 
-- As a developer have to make decisions on who to implement different features like routing, styling, authentication, backend api etc.
+- As a developer you have to make decisions on how to implement different features like routing, styling, authentication, backend api etc.
 
 Well Next.js on the other hand is framework(a complete solution with its own opinionated rules of building an app).
 
@@ -58,3 +58,15 @@ Next js has an opiniated way of routing all the screens/pages, its called **File
 - To nested routes inside a dynamic routes, instead of file you can create a folder with the same name enclosed in [], and then create nested routes inside that folder.
 - For example for routes like _/project/1/review_ _/project/200/review_, or _/project/2/review/3004_ you can create a subfolder [projectId] inside project folder and inside that subfolder create review folder and so on.
 - Now to access all these dynamic parameters you still have use the _useRouter_ as metioned in the previous section.
+
+### Catch all routes
+
+- To make a catch all routes pages, your file name should be enclosed in square brackets and three dots should be preceeding it.
+- For example to catch routes after _/docs_ like _/docs/abc_, _/docs/abc/aaaa/cedd_ you can create a file [...slug].js.
+- And to make catch all routes optional you can add another square bracket around it. So, [[...slug]].js will catch _/docs_ , _/docs/anything/after/it_.
+
+> Note: All the predefined rotues takes precedence over Dynamic routes, and all the Dynamic routes takes precedence over catch all routes.
+
+### 404 Not Found
+
+Next already provides a Not found page for any unmatched routes, but if you want to create a custom 404 not found page, you can do so by creating a file names **_404.js_** in the root directory( i.e pages ).

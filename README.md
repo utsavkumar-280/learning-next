@@ -73,5 +73,5 @@ Next already provides a Not found page for any unmatched routes, but if you want
 
 ### Navigating
 
-- We can use the **Link** component to navigate to any page.([more detailed explation](https://nextjs.org/docs/api-reference/next/router))
-- Also we can use the router object which comes with methods like push, replace, back to navigate imperatively in the app.([more detailed explation](https://nextjs.org/docs/api-reference/next/link))
+- We can use the **Link** component to navigate to any page.([more detailed explation](https://nextjs.org/docs/api-reference/next/link))
+- Also we can use the router object which comes with methods like push, replace, back to navigate imperatively in the app.([router docs](https://nextjs.org/docs/api-reference/next/router), [example](https://nextjs.org/docs/routing/imperatively))

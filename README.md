@@ -52,3 +52,9 @@ Next js has an opiniated way of routing all the screens/pages, its called **File
 - To make a route dynamic you can wrap the name of that file with square brackets.
 - For example to make routes like _/project/1_ , _project/2_, _project/anything_ we can create a file [projectId].js inside the project subdirectory and all of these routes mentioned above will correspond to it.
 - To access the parameter mentioned in the dynamic route you can make use of **_useRouter from "next/router"_**, and extract query property from it, which in itself is an object and contains all the dynamic parameter( here _productId_ )
+
+### Nested Dynamic Routes
+
+- To nested routes inside a dynamic routes, instead of file you can create a folder with the same name enclosed in [], and then create nested routes inside that folder.
+- For example for routes like _/project/1/review_ _/project/200/review_, or _/project/2/review/3004_ you can create a subfolder [projectId] inside project folder and inside that subfolder create review folder and so on.
+- Now to access all these dynamic parameters you still have use the _useRouter_ as metioned in the previous section.

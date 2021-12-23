@@ -14,8 +14,8 @@ export default function Home() {
 
 			<main className={styles.main}>
 				<h1 className={styles.title}>Welcome to Home page</h1>
-				<Link href="/project">
-					<a>Go to Projects -{">"} </a>
+				<Link href="/userslist">
+					<a>Go to Users List -{">"} </a>
 				</Link>
 			</main>
 

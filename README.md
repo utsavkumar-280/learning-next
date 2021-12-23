@@ -118,3 +118,20 @@ Its means that Next.js generates HTML for each page in advance instead of gettin
 - Ex. Blog pages, Portfolio websites, e-commerce listing pages, documentation and marketing pages.
 
 ![SSG Basic](public/SSG.png)
+
+Static Generation can be done with or without fetching external data.
+
+![SSG with not external data](public/SSGnoData.png)
+
+As of now what we have discussed is all part of SSG witout fetching external data. Lets go for the latter now.
+
+### SSG with Data
+
+![SSG with not external data](public/SSGwithData.png)
+
+Some pages require fetching external data for pre-rendering.
+There are two scenarios, and one or both might apply. In each case, you can use these functions that Next.js provides:
+
+- Your page content depends on external data: Use getStaticProps.
+  - To fetch this data on pre-render, Next.js allows you to export an async function called getStaticProps from the same file. This function gets called at build time and lets you pass fetched data to the page's props on pre-render.( [more detailed explaination](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation) )
+- Your page paths depend on external data: Use getStaticPaths (usually in addition to getStaticProps).

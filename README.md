@@ -80,7 +80,8 @@ Next already provides a Not found page for any unmatched routes, but if you want
 
 In a simple CRA( Create React App), you get an HTML page with `<div id="root">`, which gets populated( or Hydrated) from the bundle.js file, when it runs on the browser. This is what you call Client Side Rendering(CSR).
 
-![pre-render](../next/public/CSR.png)
+![CSR](https://user-images.githubusercontent.com/66728108/147195446-19b83ce4-f95c-46d5-9804-9442e5b50652.png)
+
 
 In Next.js it pre-renders every page in the application by default.
 
@@ -88,7 +89,8 @@ In Next.js it pre-renders every page in the application by default.
 
 Its means that Next.js generates HTML for each page in advance instead of getting it all done by the client-side javascript.
 
-![pre-render](../next/public/Pre-rendering.png)
+![Pre-rendering](https://user-images.githubusercontent.com/66728108/147195351-ead117f1-951a-495e-89a9-61c46c7e82ea.png)
+
 
 ### Why Pre-rendering?
 

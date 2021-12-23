@@ -82,7 +82,6 @@ In a simple CRA( Create React App), you get an HTML page with `<div id="root">`,
 
 ![CSR](https://user-images.githubusercontent.com/66728108/147195446-19b83ce4-f95c-46d5-9804-9442e5b50652.png)
 
-
 In Next.js it pre-renders every page in the application by default.
 
 ### But what does pre-render mean?
@@ -90,7 +89,6 @@ In Next.js it pre-renders every page in the application by default.
 Its means that Next.js generates HTML for each page in advance instead of getting it all done by the client-side javascript.
 
 ![Pre-rendering](https://user-images.githubusercontent.com/66728108/147195351-ead117f1-951a-495e-89a9-61c46c7e82ea.png)
-
 
 ### Why Pre-rendering?
 
@@ -105,3 +103,18 @@ Its means that Next.js generates HTML for each page in advance instead of gettin
    - If you are building a blog or an e-commerce site SEO is a concern.
    - With React app, if the search engine hits you page, it only sees a div element with id as "root".
    - If the search engine hits a pre-rendered page though, all the content is present in the source code which will help index that page.
+
+### Next.js supports two forms of Pre-rendering
+
+- Static Site Generation (SSG)
+- Server Side Rendering (SSR)
+
+### Static Site Generation
+
+- A method of pre-rendering where the HTML pages are generated at build time.
+- The HTML with all the data that makes up the content of the ages are generated in advance ehwn you build you application.
+- Recommended method to pre-render pages whenever possible.
+- Page can be built once, cached by a CDN and served to the client almost instantly.
+- Ex. Blog pages, Portfolio websites, e-commerce listing pages, documentation and marketing pages.
+
+![SSG Basic](public/SSG.png)

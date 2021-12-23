@@ -75,3 +75,31 @@ Next already provides a Not found page for any unmatched routes, but if you want
 
 - We can use the **Link** component to navigate to any page.([more detailed explation](https://nextjs.org/docs/api-reference/next/link))
 - Also we can use the router object which comes with methods like push, replace, back to navigate imperatively in the app.([router docs](https://nextjs.org/docs/api-reference/next/router), [example](https://nextjs.org/docs/routing/imperatively))
+
+## Pre-Rendering
+
+In a simple CRA( Create React App), you get an HTML page with `<div id="root">`, which gets populated( or Hydrated) from the bundle.js file, when it runs on the browser. This is what you call Client Side Rendering(CSR).
+
+![pre-render](../next/public/CSR.png)
+
+In Next.js it pre-renders every page in the application by default.
+
+### But what does pre-render mean?
+
+Its means that Next.js generates HTML for each page in advance instead of getting it all done by the client-side javascript.
+
+![pre-render](../next/public/Pre-rendering.png)
+
+### Why Pre-rendering?
+
+1. Pre-rendering imporves app performance.
+
+   - In a react app you need to wait for the JavaScript to be excecuted.
+   - Perhaps to fetch data from an external API and then render the UI.
+   - There is an initial wait time for the user, which spoils the user-expreience.
+   - With pre-rendered page, the HTML is already generated and loads faster.
+
+2. Pre-rendering helps with SEO.
+   - If you are building a blog or an e-commerce site SEO is a concern.
+   - With React app, if the search engine hits you page, it only sees a div element with id as "root".
+   - If the search engine hits a pre-rendered page though, all the content is present in the source code which will help index that page.

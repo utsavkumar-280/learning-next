@@ -135,3 +135,49 @@ There are two scenarios, and one or both might apply. In each case, you can use 
 - Your page content depends on external data: Use getStaticProps.
   - To fetch this data on pre-render, Next.js allows you to export an async function called getStaticProps from the same file. This function gets called at build time and lets you pass fetched data to the page's props on pre-render.( [more detailed explaination](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation) )
 - Your page paths depend on external data: Use getStaticPaths (usually in addition to getStaticProps).
+
+**getStaticProps** :
+
+- A
+
+  - _getStaticProps_ runs only on the server side.
+  - The function will never run on the client-side.
+  - The code you wrote inside _getStaticProps_ won't even be included in the JS bundle thai is sent to the browser.
+
+- B
+
+  - You can write server-side code directly in _getStaticProps_.
+  - Accessing the file system using the fs module or querying a database can be done inside _getStaticProps_.
+  - You don't have to worry about including API keys in _getStaticProps_ as that won't make it to the browser.
+
+- C
+
+  - _getStaticProps_ is allowed only in page and cannot be run from a regular component file.
+  - Its used only for pre-rendering and not client-side datafetching.
+
+- D
+
+  - _getStatcProps_ should return an object and object should contain a props property which in turn should be an object.
+
+- E
+  - _getStaticProps_ will run at build time.
+  - During development, _getStaticProps_ runs on every request(reload of the page).
+
+**Link Pre-Fetching**:
+
+- When a page with getStaticProps is pre-rendered at build time, in additon to page HTML file, Next.js generates a JSON file holding the result of running getStaticProps.
+
+- The JSON file will be used in client-side routing through next/link, or next/router.
+
+- When you navigate to a page that's pre-rendered using getStaticProps, Next.js fetches the JSON file( pre-computed at build time ) and uses it as the props to create the page component client-side.
+
+- Client-Side page transitions will not call getStaticProps as only the exported JSON is used.
+
+**_Summary so far_**
+
+- Static Generation is a method of pre-rendering where the HTML is generated at the build time.
+- With and without external data.
+- Export getStaticProps function for external data.
+- HTML, JavaScript and a JSON file are generated.
+- If you navigate directly to the page route, the HTML file is served.
+- If you navigate to the page route from a different route, the page is created client side using the JavaScript and JSON pre-fetched from the server.

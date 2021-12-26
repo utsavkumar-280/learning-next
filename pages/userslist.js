@@ -26,7 +26,7 @@ export default function UsersList({ users }) {
 			<main className={styles.main}>
 				<h1 className={styles.title}>Users List</h1>
 				{users.map((user) => (
-					<UserCard user={user} />
+					<UserCard user={user} key={user.id} />
 				))}
 			</main>
 

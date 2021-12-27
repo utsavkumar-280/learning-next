@@ -1,20 +1,36 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import UserCard from "../components/userCard";
+import { useRouter } from "next/router";
+import styles from "../../styles/Home.module.css";
+import UserCard from "../../components/userCard";
 
-export const getStaticProps = async () => {
-	const response = await fetch("https://jsonplaceholder.typicode.com/users");
+export const getStaticProps = async ({ params: { userId } }) => {
+	const response = await fetch(
+		`https://jsonplaceholder.typicode.com/users/${userId}`
+	);
 	const data = await response.json();
 
 	return {
 		props: {
-			users: data,
+			user: data,
 		},
 	};
 };
 
-export default function UsersList({ users }) {
+export const getStaticPaths = async () => {
+	const usersData = await fetch(
+		"https://jsonplaceholder.typicode.com/users"
+	).then((res) => res.json());
+	const paths = usersData.map((user) => ({
+		params: {
+			userId: `${user.id}`,
+		},
+	}));
+
+	return { paths, fallback: false };
+};
+
+export default function User({ user }) {
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -24,10 +40,7 @@ export default function UsersList({ users }) {
 			</Head>
 
 			<main className={styles.main}>
-				<h1 className={styles.title}>Users List</h1>
-				{users.map((user) => (
-					<UserCard user={user} key={user.id} />
-				))}
+				<h1 className={styles.title}>User {user.name} </h1>
 			</main>
 
 			<footer className={styles.footer}>

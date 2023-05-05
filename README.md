@@ -4,20 +4,16 @@
 
 The docs define Next.js as **The React Framework for Production**.
 
-But why a framework for react, isn't React enough to start building applications. Well
+But why do we need a framework for react, wasn't React enough to start building applications. Well
 
 - React is a library for building user interfaces, it is responsible only the view layer of the application.
-
 - Now if you think of building applications with just **React**. Its is not really possible to build to full feature rich application ready to be deployed for production just with it.
-
 - As a developer you have to make decisions on how to implement different features like routing, styling, authentication, backend api etc.
 
 Well Next.js on the other hand is framework(a complete solution with its own opinionated rules of building an app).
 
 - A package that uses React for building user interfaces.
-
 - Loaded with a lot more features that enable you to build full fledged production readu applications. Features exactly like routing, styling, authentication, bundle optimization, backend apis etc.
-
 - As mentioned before, its has some opinions and conventions that needs to followed to implement the above said features.
 
 ## Why Next.js?
@@ -40,7 +36,7 @@ Next js has an opiniated way of routing all the screens/pages, its called **File
 
 - All the files( react component ) created in the pages folder corresponds to paths with similar names on the app.
 - You can also just create a subfoler inside the pages folder and create an index.js file inside that folder, the react, a new route will me created with the same name as that of the subfolder and it will reside the react component(or page) you just created in that index.js file.
-- _index.js_ always corresponds to root path of the directory/folder inside which it is present. For example index.js inside pages folder will correspont to domain root of the app( here <https://localhost:3000> ) and index.js inside subfolder projects will correspond to route <http://localhost:3000/projects>.
+- _index.js_ always corresponds to root path of the directory/folder inside which it is present. For example index.js inside pages folder will correspont to domain root of the app( here [https://localhost:3000](https://localhost:3000) ) and index.js inside subfolder projects will correspond to route [http://localhost:3000/projects](http://localhost:3000/projects).
 
 ### Nested Routes
 
@@ -100,6 +96,7 @@ Its means that Next.js generates HTML for each page in advance instead of gettin
    - With pre-rendered page, the HTML is already generated and loads faster.
 
 2. Pre-rendering helps with SEO.
+
    - If you are building a blog or an e-commerce site SEO is a concern.
    - With React app, if the search engine hits you page, it only sees a div element with id as "root".
    - If the search engine hits a pre-rendered page though, all the content is present in the source code which will help index that page.
@@ -160,17 +157,15 @@ There are two scenarios, and one or both might apply. In each case, you can use 
   - _getStatcProps_ should return an object and object should contain a props property which in turn should be an object.
 
 - E
+
   - _getStaticProps_ will run at build time.
   - During development, _getStaticProps_ runs on every request(reload of the page).
 
 **Link Pre-Fetching**:
 
 - When a page with getStaticProps is pre-rendered at build time, in additon to page HTML file, Next.js generates a JSON file holding the result of running getStaticProps.
-
 - The JSON file will be used in client-side routing through next/link, or next/router.
-
 - When you navigate to a page that's pre-rendered using getStaticProps, Next.js fetches the JSON file( pre-computed at build time ) and uses it as the props to create the page component client-side.
-
 - Client-Side page transitions will not call getStaticProps as only the exported JSON is used.
 
 **_Summary so far_**
